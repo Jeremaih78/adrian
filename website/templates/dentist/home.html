@@ -1,0 +1,213 @@
+{% extends 'dentist/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+
+    <section class="banner_section">
+        <div class="banner-main">
+            <img src="{% static 'website/images/banner.jpg'%}" />
+            <div class="container">
+
+                <div class="text-bg relative">
+                    
+          
+                    <li >          
+                        <a class="home-a" href="{% url 'dentist:contact'%}">
+                        Contact SavannaMan
+                        </a>
+                    </li>
+   
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <hr/>
+<center>
+<div class="Albumsbg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="Albumstitlepage"><br>
+                    <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-weight: bold;"><u>CLICK ARTIST NAME TO PLAY & DOWNLOAD MUSIC</u></h1>
+                    <ul>
+                            {% for album in albums %}
+                                <li >
+                                    <span style="font-weight: bold;"><a class="home-a" href="{% url 'dentist:profile_detail' username=album.album_artist %}">
+                                        <img src="{{ album.album_logo.url }}" style="width:100px">
+                                    </a></span>
+                                    <br>
+                                    <span style="color:rgb(8, 8, 8); font-weight: bolder;">{{album.album_name}} by:</span>
+                                    <a style="color: white; font-weight: bolder;" class="home-a" href="{% url 'dentist:profile_detail' username=album.album_artist %}">
+                                       {{album.album_artist}}
+                                    </a>
+                                </li><hr/>
+                            {% endfor %}
+                    </ul> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</center>
+
+    <!-- music-box  -->
+   
+<center>
+    <div class="music-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                    <div class="for-box">
+                        
+                        <i><a href="https://audiomack.com/mrpanotidamashingaidze/song/hunter"><img src="{% static 'website/icon/icon8.png'%}" alt="icon"/></a></i>
+                        <h3><a href="https://audiomack.com/mrpanotidamashingaidze/song/hunter">Audiomack</a></h3>
+                        <p>Check out a hit song HUNTER on Audiomack <br> Follow me on Audiomack </p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                    <div class="for-box">
+
+                        <i><a href="https://open.spotify.com/track/3JhBm8usIg156p7HvqPXc5?si=GNOZw78mQW662TJlz-uUBw"><img src="{% static 'website/icon/icon5.png'%}" alt="icon"/></a></i>
+                        <h3><a href="https://open.spotify.com/track/3JhBm8usIg156p7HvqPXc5?si=GNOZw78mQW662TJlz-uUBw">SPOTIFY</a></h3>
+                        <p>Find more music on SPOTIFY</p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                    <div class="for-box">
+                       
+                        <i><a href="http://www.deezer.com/album/169008622"><img src="{% static 'website/icon/icon6.png'%}" alt="icon"/></a></i>
+                        <h3><a href="http://www.deezer.com/album/169008622">Deezer</a></h3>
+                        <p>Discover Sticks and Stones song on Deezer </p>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12">
+                    <div class="for-box">
+         
+                        <i><a href="https://music.apple.com/zw/album/hunter/1546550705?i=1546551007"><img src="{% static 'website/icon/icon7.png'%}" alt="icon"/></a></i>
+                        <h3><a href="https://music.apple.com/zw/album/hunter/1546550705?i=1546551007">Apple Music</a></h3>
+                        <p>Visit Apple music to enjoy more Hits </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</center>
+    <!-- end music-box  -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 padding">
+                <div class="img-box">
+                    <figure><img src="{% static 'website/images/musicbg1.jpg'%}" alt="img" /></figure>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 padding">
+                <div class="text-box">
+                    <div class="box">
+                        <i><img src="{% static 'website/images/5.1.jpg'%}"/></i>
+                        <h3>MEET A Music STAR</h3>
+                        <p>Without music, life would be a mistake.
+                            <br> To feature with SavannaMan!!
+                        <br><br>Send a message </p>
+                        <a href="https://wa.link/708m65">Message SavannaMan</a>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Download -->
+    <!-- <div id="screenshot" class="Lastestnews">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Latest News</h2>
+                        <span>It is a long established fact that a reader will be distracted by the readable <br>content of a page when looking at its layout. The point of using Lorem </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="news-box">
+                        <figure><img src="{% static 'website/images/1.jpg'%}" alt="img" /></figure>
+                        <h3>Live With Music</h3>
+                        <span> March 20</span><span>Comment</span>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, </p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="news-box">
+                        <figure><img src="{% static 'website/images/2.jpg'%}" alt="img" /></figure>
+                        <h3>Best Music</h3>
+                        <span> March 20</span><span>Comment</span>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, </p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
+                    <div class="news-box">
+                        <figure><img src="{% static 'website/images/3.jpg'%}" alt="img" /></figure>
+                        <h3>Live With Music</h3>
+                        <span> March 20</span><span>Comment</span>
+                        <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- end Download -->
+
+    <!-- Albums -->
+    <!-- <div id="screenshot" class="Albums">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="titlepage">
+                        <h2>Albums-box </h2>
+                        <span>It is a long established fact that a reader will be distracted by the readable <br>content of a page when looking at its layout. The point of using Lorem </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
+                    <div class="Albums-box">
+                        <figure>
+                            <a href="{% static 'website/images/album1.jpg'%}" class="fancybox" rel="ligthbox">
+                                <img src="{% static 'website/images/album1.jpg'%}" class="zoom img-fluid " alt="">
+                            </a>
+                            <span class="hoverle">
+                        <a href="{% static 'website/images/album1.jpg'%}" class="fancybox" rel="ligthbox"><img src="{% static 'website/images/search.png'%}"></a>
+                        </span>
+                        </figure>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margin">
+                    <div class="Albums-box">
+                        <figure>
+                            <a href="{% static 'website/images/album2.jpg'%}" class="fancybox" rel="ligthbox ">
+                                <img src="{% static 'website/images/album2.jpg'%}" class="zoom img-fluid " alt="">
+                            </a>
+                            <span class="hoverle">
+                        <a href="{% static 'website/images/album2.jpg'%}" class="fancybox" rel="ligthbox"><img src="{% static 'website/images/search.png'%}"></a>
+                        </span>
+                        </figure>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+    <!-- end Albums -->
+
+    <!-- Newsletter -->
+ 
+   
+    <!-- end Newsletter -->
+
+    {% endblock %}

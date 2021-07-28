@@ -1,0 +1,21 @@
+{% extends 'dentist/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<center>
+{% if user.is_authenticated %}
+<h3><strong>You are already logged in</strong></h3>
+<small>Do you want to <a href="{% url 'dentist:logout' %}"><strong>LogOut</strong></a></small>
+
+{% else %}
+  <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    <input type="hidden" name="next" value="{{ next }}"
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary" style="background-color:green">Login</button>
+  </form>
+{% endif %}
+</center>
+{% endblock %}
