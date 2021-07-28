@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure--qw$1i(w)3-qm%u=h5l7u2+h3kmq2q0p7#!g9x0m8ix)ri389%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1:8000','']
 
 
 # Application definition
@@ -46,13 +46,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddlware',
+    
 ]
 
 ROOT_URLCONF = 'dentist.urls'
@@ -125,7 +126,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR,'static'),
+]
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #email settings
