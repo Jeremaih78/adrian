@@ -18,7 +18,7 @@ def user_directory_path_song(self, filename):
 # Create your models here.
 class Album(models.Model):
     album_name = models.CharField(max_length=30)
-    uploaded_on = models.DateField(default=timezone.now())
+    uploaded_on = models.DateTimeField(default=timezone.now)
     album_logo = models.FileField(upload_to=user_directory_path)
     album_genre = models.CharField(max_length=30)
     album_artist = models.ForeignKey(User, on_delete=models.CASCADE, related_name='albums')
